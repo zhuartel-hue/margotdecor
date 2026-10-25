@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generowanie zdjęć i wideo lamp przez Runway API (bez zależności spoza stdlib).
 
-Klucz API czytany ze zmiennej środowiskowej RUNWAYML_API_SECRET.
+Klucz API: zwykle dokłada go proxy środowiska (Network secret dla api.dev.runwayml.com).
+Lokalnie można go podać w zmiennej środowiskowej RUNWAYML_API_SECRET.
 
 Przykłady:
   # zdjęcie aranżacji z prawdziwym zdjęciem lampy jako referencją
@@ -27,18 +28,15 @@ PROMPT_LIMIT = 1000
 
 
 def call(method, path, body=None):
+    headers = {"X-Runway-Version": VERSION, "Content-Type": "application/json"}
     key = os.environ.get("RUNWAYML_API_SECRET")
-    if not key:
-        sys.exit("Brak zmiennej RUNWAYML_API_SECRET")
+    if key:
+        headers["Authorization"] = f"Bearer {key}"
     req = urllib.request.Request(
         API + path,
         method=method,
         data=json.dumps(body).encode() if body is not None else None,
-        headers={
-            "Authorization": f"Bearer {key}",
-            "X-Runway-Version": VERSION,
-            "Content-Type": "application/json",
-        },
+        headers=headers,
     )
     try:
         with urllib.request.urlopen(req) as resp:
