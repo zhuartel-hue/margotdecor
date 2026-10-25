@@ -60,6 +60,7 @@ def read_prompt(args):
 
 
 def wait(task_id):
+    print(f"Zadanie Runway: {task_id}", file=sys.stderr)
     while True:
         task = call("GET", f"/tasks/{task_id}")
         status = task["status"]
@@ -75,7 +76,13 @@ def save(urls, out):
     root, ext = os.path.splitext(out)
     for i, url in enumerate(urls):
         path = out if len(urls) == 1 else f"{root}-{i + 1}{ext}"
-        urllib.request.urlretrieve(url, path)
+        # adres wyniku jest ważny tylko przez ograniczony czas, więc zapisujemy go od razu
+        with open(path + ".url", "w") as f:
+            f.write(url + "\n")
+        try:
+            urllib.request.urlretrieve(url, path)
+        except urllib.error.URLError as e:
+            sys.exit(f"Nie udało się pobrać {url}: {e}")
         print(path)
 
 
@@ -132,6 +139,11 @@ def main():
     vid.set_defaults(func=cmd_video)
 
     sub.add_parser("credits", help="sprawdź klucz i kredyty").set_defaults(func=cmd_credits)
+
+    get = sub.add_parser("get", help="pobierz wynik istniejącego zadania")
+    get.add_argument("task_id")
+    get.add_argument("--out", required=True)
+    get.set_defaults(func=lambda a: save(wait(a.task_id), a.out))
 
     args = p.parse_args()
     args.func(args)
