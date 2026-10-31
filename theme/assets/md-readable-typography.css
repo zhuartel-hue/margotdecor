@@ -1,6 +1,8 @@
 /* Margot Decor — readability pass v1, 03.10.2026
    Goal: improve legibility without changing the premium visual hierarchy. */
-html { font-size: 17px; }
+/* 31.10.2026: html stays at the theme base (62.5% = 10px rem). The old 17px/16px base
+   blew every theme size (menu, drawer, titles, price, buttons) up ~1.7x.
+   Body copy is kept readable with fixed px sizes below instead. */
 
 body {
   line-height: 1.65;
@@ -24,17 +26,21 @@ body {
 .rte,
 .rte p,
 .rte li {
-  font-size: 1rem;
+  font-size: 17px;
 }
 
 input,
 textarea,
 select {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 @media (max-width: 749px) {
-  html { font-size: 16px; }
+  .rte,
+  .rte p,
+  .rte li {
+    font-size: 16px;
+  }
 }
 
 /* Margot Decor — smaller product-card action on mobile */
