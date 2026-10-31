@@ -171,3 +171,13 @@ select {
     font-size: 20px;
   }
 }
+
+/* Margot Decor — 31.10.2026: homepage banner "Pasja, precyzja…" same width as the collage tiles below
+   (page width + the theme's side padding, like the collage section) */
+[id$="__image_banner_fUc3Bc"] {
+  padding-inline: var(--gsc-aside-padding-size, 0);
+}
+
+[id$="__image_banner_fUc3Bc"] .container {
+  max-width: var(--gsc-page-width);
+}
