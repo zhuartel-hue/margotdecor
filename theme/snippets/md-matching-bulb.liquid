@@ -1,0 +1,47 @@
+{% comment %}Margot Decor: matching bulbs from custom.matching_bulb (list of product references), shown at the bottom of the product page; PL / EN / DE / RU.{% endcomment %}
+{% liquid
+  assign bulbs = product.metafields.custom.matching_bulb.value
+  assign mb_lang = request.locale.iso_code | split: '-' | first
+  case mb_lang
+    when 'pl'
+      assign t_title = 'Pasująca żarówka'
+      assign t_title_many = 'Pasujące żarówki'
+      assign t_note = 'Żarówki nie są w zestawie z lampą. Wybierz żarówkę pasującą do tego modelu.'
+      assign t_view = 'Zobacz'
+    when 'de'
+      assign t_title = 'Passendes Leuchtmittel'
+      assign t_title_many = 'Passende Leuchtmittel'
+      assign t_note = 'Leuchtmittel sind nicht im Lieferumfang enthalten.'
+      assign t_view = 'Ansehen'
+    when 'ru'
+      assign t_title = 'Подходящая лампа'
+      assign t_title_many = 'Подходящие лампы'
+      assign t_note = 'Лампы не входят в комплект светильника.'
+      assign t_view = 'Смотреть'
+    else
+      assign t_title = 'Matching bulb'
+      assign t_title_many = 'Matching bulbs'
+      assign t_note = 'Bulbs are not included with the lamp.'
+      assign t_view = 'View'
+  endcase
+%}
+{% if bulbs != blank and bulbs.size > 0 %}
+  {% if bulbs.size > 1 %}{% assign t_title = t_title_many %}{% endif %}
+  <div class="md-bulbs" style="margin:3rem 0 1rem;padding-top:2rem;border-top:1px solid rgba(0,0,0,.08);">
+    <h2 style="margin:0 0 .4rem;">{{ t_title }}</h2>
+    <p style="margin:0 0 1.4rem;color:var(--mdp-muted,#4f5c57);">{{ t_note }}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,240px));gap:1.5rem;">
+      {% for bulb in bulbs limit: 6 %}
+        {% if bulb != blank %}
+          <a href="{{ bulb.url }}" style="display:block;text-decoration:none;color:inherit;">
+            {% if bulb.featured_image %}
+              {{ bulb.featured_image | image_url: width: 600, height: 600, crop: 'center' | image_tag: loading: 'lazy', alt: bulb.title, style: 'display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:#f6f3ee;' }}
+            {% endif %}
+            <span style="display:block;margin-top:.7rem;line-height:1.4;">{{ bulb.title | escape }}</span>
+            <span style="display:block;margin-top:.2rem;color:var(--mdp-muted,#4f5c57);">{{ bulb.price | money }} · <span style="text-decoration:underline;">{{ t_view }}</span></span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
