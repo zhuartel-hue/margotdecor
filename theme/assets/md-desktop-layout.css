@@ -1,0 +1,94 @@
+/* Margot Decor — shared product frame. Desktop 04.10.2026, mobile table 22.10.2026.
+   Scoped to product pages. Native mobile layout and 60/40 are retained. */
+@media screen and (min-width: 1024px) {
+  #MainContent:has(.mdp-marker) {
+    --mdp-content-max: 1280px;
+    --mdp-desktop-gutter: clamp(32px, 3vw, 64px);
+  }
+
+  #MainContent .product.product--page:has(.mdp-marker) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: var(--mdp-desktop-gutter);
+  }
+
+  #MainContent .product.product--page:has(.mdp-marker) > .product__container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--mdp-content-max);
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  #MainContent .product.product--page:has(.mdp-marker) .product__content,
+  #MainContent .product.product--page:has(.mdp-marker) .product__content > * {
+    min-width: 0;
+  }
+
+  #MainContent:has(.mdp-marker) .mdp-details {
+    box-sizing: border-box;
+    width: calc(100% - var(--mdp-desktop-gutter) - var(--mdp-desktop-gutter));
+    max-width: var(--mdp-content-max);
+    min-width: 0;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  #MainContent .mdp-details > .mdp-description,
+  #MainContent .mdp-details > .mdp-details-media,
+  #MainContent .mdp-details > .mdp-technical,
+  #MainContent .mdp-details > .mdp-document,
+  #MainContent .mdp-details > .mdp-video {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin-inline: 0;
+  }
+
+  /* The section frame is shared; paragraphs keep a readable line length. */
+  #MainContent .mdp-details .mdp-prose {
+    max-width: 72ch;
+    margin-inline: 0;
+  }
+
+  #MainContent .mdp-details .mdp-detail-gallery {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #MainContent .mdp-details .mdp-technical .mdp-specs {
+    width: 100%;
+    max-width: none;
+  }
+
+  #MainContent .mdp-details .mdp-technical .mdp-specs > div {
+    grid-template-columns: clamp(260px, 34%, 360px) minmax(0, 1fr);
+    column-gap: clamp(24px, 3vw, 40px);
+  }
+
+  #MainContent .mdp-details .mdp-technical .mdp-specs dd {
+    text-align: left;
+  }
+}
+
+/* Phones: label above value, so long values (e.g. crystal counts) do not squeeze into a right-aligned half column. */
+@media screen and (max-width: 749px) {
+  #MainContent .mdp-details .mdp-technical .mdp-specs > div {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: .2em;
+    padding: .75em 0;
+  }
+
+  #MainContent .mdp-details .mdp-technical .mdp-specs dt {
+    font-size: .9em;
+  }
+
+  #MainContent .mdp-details .mdp-technical .mdp-specs dd {
+    text-align: left;
+  }
+}

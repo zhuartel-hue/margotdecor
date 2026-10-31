@@ -1,0 +1,34 @@
+{% comment %}Margot Decor clean product-side summary v2 for all products; PL / EN / DE / RU.{% endcomment %}
+{% liquid
+  assign md = product.metafields.custom.md_catalog.value
+  assign md_lang = request.locale.iso_code | split: '-' | first
+  case md_lang
+    when 'pl'
+      assign t_lead = 'Wykonywane na zamówienie · realizacja 1–3 miesiące · 100% przedpłaty'
+      assign t_tech = 'Dane techniczne ↓'
+      assign t_ask = 'Zapytaj o produkt'
+    when 'de'
+      assign t_lead = 'Fertigung auf Bestellung · Lieferzeit 1–3 Monate · 100 % Vorauszahlung'
+      assign t_tech = 'Technische Daten ↓'
+      assign t_ask = 'Fragen zu diesem Produkt'
+    when 'ru'
+      assign t_lead = 'Изготовление на заказ · срок изготовления 1–3 месяца · 100 % предоплата'
+      assign t_tech = 'Технические характеристики ↓'
+      assign t_ask = 'Задать вопрос о товаре'
+    else
+      assign t_lead = 'Made to order · lead time 1–3 months · 100% prepayment'
+      assign t_tech = 'Technical details ↓'
+      assign t_ask = 'Ask about this product'
+  endcase
+%}
+{% if product.tags contains 'na zamówienie' %}
+  <p class="mdp-lead-time" style="margin:16px 0 0;font-size:15px;line-height:1.6;color:var(--mdp-muted,#4f5c57);">{{ t_lead }}</p>
+{% endif %}
+<div class="mdp-summary mdp-summary--links">
+  {% if md.verified == true and md.specs.size > 0 %}
+    <a class="mdp-contact mdp-contact--inline" href="#mdp-technical">{{ t_tech }}</a>
+    <span class="mdp-summary__separator" aria-hidden="true">·</span>
+  {% endif %}
+  <a class="mdp-contact mdp-contact--inline" href="{{ routes.root_url }}{% unless routes.root_url == '/' %}/{% endunless %}pages/contact">{{ t_ask }}</a>
+</div>
+{% render 'md-matching-bulb' %}

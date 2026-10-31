@@ -147,3 +147,27 @@ select {
     font-size: 26px;
   }
 }
+
+/* Margot Decor — 31.10.2026 (2): product price and mobile drawer menu at a calm size */
+.product-price__current-price {
+  font-size: 22px;
+}
+
+.drawer-menu__menu-item,
+.drawer-menu__menu-item-label,
+.drawer-menu__list-title-label {
+  font-size: 20px;
+}
+
+.drawer-menu__menu-item--medium,
+.drawer-menu__menu-item--medium .drawer-menu__menu-item-label,
+.drawer-menu__menu-item--small,
+.drawer-menu__menu-item--small .drawer-menu__menu-item-label {
+  font-size: 17px;
+}
+
+@media (max-width: 749px) {
+  .product-price__current-price {
+    font-size: 20px;
+  }
+}
