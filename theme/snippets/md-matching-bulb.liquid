@@ -5,23 +5,28 @@
   case mb_lang
     when 'pl'
       assign t_title = 'Pasująca żarówka'
+      assign t_title_many = 'Pasujące żarówki'
       assign t_note = 'Żarówki nie są w zestawie z lampą.'
       assign t_view = 'Zobacz'
     when 'de'
       assign t_title = 'Passendes Leuchtmittel'
+      assign t_title_many = 'Passende Leuchtmittel'
       assign t_note = 'Leuchtmittel sind nicht im Lieferumfang enthalten.'
       assign t_view = 'Ansehen'
     when 'ru'
       assign t_title = 'Подходящая лампа'
+      assign t_title_many = 'Подходящие лампы'
       assign t_note = 'Лампы не входят в комплект светильника.'
       assign t_view = 'Смотреть'
     else
       assign t_title = 'Matching bulb'
+      assign t_title_many = 'Matching bulbs'
       assign t_note = 'Bulbs are not included with the lamp.'
       assign t_view = 'View'
   endcase
 %}
 {% if bulbs != blank and bulbs.size > 0 %}
+  {% if bulbs.size > 1 %}{% assign t_title = t_title_many %}{% endif %}
   <div class="md-bulb" style="margin:1.25rem 0 0;padding:1rem 0 0;border-top:1px solid rgba(0,0,0,.08);">
     <p style="margin:0 0 .6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mdp-muted,#4f5c57);">{{ t_title }}</p>
     {% for bulb in bulbs limit: 3 %}
