@@ -119,6 +119,18 @@ select {
   }
 }
 
+@media (min-width: 750px) and (max-width: 1439px) {
+  .header__item,
+  .header__item .underline-text__label {
+    font-size: 14px;
+  }
+
+  .header__item {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
 .product-general-info-block h1 {
   font-size: 34px;
   line-height: 1.2;
