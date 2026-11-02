@@ -1,0 +1,144 @@
+{
+  "nazwa": "Sophia Gleam",
+  "wymiar": "50-40",
+  "kolekcja": "Sophia",
+  "typ": "Żyrandol kryształowy",
+  "intro": "Kryształowa lampa wisząca o dekoracyjnej, wielopoziomowej formie.",
+  "o_modelu": [
+    "Sophia Gleam 50-40 łączy dekoracyjną sylwetkę żyrandola z wielopoziomową kompozycją kryształowych elementów. Okrągłe detale i podłużne zawieszki tworzą bogatą, przestrzenną formę, a złoty odcień oprawy podkreśla jej reprezentacyjny charakter.",
+    "To model przeznaczony do wnętrz, w których lampa ma być wyraźnie widoczna. Dobrze prezentuje się nad stołem, w salonie oraz w eleganckim holu, stanowiąc mocny punkt całej aranżacji."
+  ],
+  "cena": "4 999 zł",
+  "url": "https://margotdecor.com/products/sophia-gleam-50-40",
+  "url_krotki": "margotdecor.com",
+  "kluczowe": [
+    [
+      "Szerokość",
+      "50 cm"
+    ],
+    [
+      "Wysokość",
+      "45 cm"
+    ],
+    [
+      "Gwint żarówki",
+      "E14"
+    ],
+    [
+      "Kryształy",
+      "143 szt."
+    ]
+  ],
+  "zdjecia": {
+    "glowne": "img/hero.jpg",
+    "glowne_podpis": "Sophia Gleam 50-40 nad okrągłym stołem w jadalni",
+    "detale": [
+      [
+        "img/d1.jpg",
+        "Rozeta i złoty łańcuch"
+      ],
+      [
+        "img/d2.jpg",
+        "Kaskada fasetowanych kryształów"
+      ]
+    ]
+  },
+  "dane": [
+    [
+      "Wymiary i masa",
+      [
+        [
+          "Szerokość",
+          "50 cm"
+        ],
+        [
+          "Wysokość bez łańcucha",
+          "45 cm"
+        ],
+        [
+          "Maksymalny zwis",
+          null
+        ],
+        [
+          "Masa stelaża",
+          null
+        ],
+        [
+          "Masa akcesoriów montażowych",
+          "1,03 kg"
+        ]
+      ]
+    ],
+    [
+      "Światło i zasilanie",
+      [
+        [
+          "Liczba żarówek",
+          null
+        ],
+        [
+          "Źródło światła",
+          "Żarówki (brak w zestawie)"
+        ],
+        [
+          "Gwint żarówki",
+          "E14"
+        ],
+        [
+          "Napięcie zasilania",
+          "230 V"
+        ],
+        [
+          "Montaż",
+          "2 osoby"
+        ]
+      ]
+    ],
+    [
+      "Kryształy",
+      [
+        [
+          "Łączna liczba kryształów",
+          "143 szt."
+        ],
+        [
+          "Kryształy Ø80 mm",
+          "15 szt. × 143 g"
+        ],
+        [
+          "Kryształy Ø60 mm",
+          "15 szt. × 57 g"
+        ],
+        [
+          "Kryształy 30 × 76 mm",
+          "113 szt. × 36 g"
+        ],
+        [
+          "Koraliki 10 × 200 mm",
+          "22 szt. × 27 g"
+        ],
+        [
+          "Łączna masa kryształów",
+          "7,068 kg"
+        ],
+        [
+          "Łączna masa koralików",
+          "0,594 kg"
+        ]
+      ]
+    ]
+  ],
+  "zarowki": [
+    [
+      "Żarówka LED E14 – 3 barwy światła",
+      "30 zł"
+    ],
+    [
+      "Złota żarówka LED E14 10 W",
+      "16 zł"
+    ]
+  ],
+  "data_karty": "02.11.2026",
+  "wersja": "TEST",
+  "montaz_osoby": "2 osoby"
+}
