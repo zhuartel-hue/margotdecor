@@ -31,3 +31,9 @@ Format: PDF A4, 2 strony, do druku i wysyłki klientom. Tylko język polski.
 1. Skopiuj `zrodla/wzor-dane-sophia-gleam-50-40.json`, uzupełnij dane i ścieżki zdjęć.
 2. Czcionki i logo są w folderze (nic nie pobieramy z internetu). Potrzebny Python 3 z `qrcode` oraz Node z `playwright`. Polecenie: `python3 buduj_karte.py <lampa>.json` (TEST) albo z `--final`.
 3. Powstaje PDF (druk), HTML (podgląd) i PNG.
+
+## Wersja
+- **v1 – ZAMROŻONA (02.11.2026).** Układ, czcionki, kolory i kolejność sekcji się nie zmieniają. Zmienia się tylko plik z danymi lampy.
+- Zmiana wyglądu tylko na wyraźną prośbę Arkadiusza, jako nowa wersja v2 (v1 zostaje bez zmian).
+- Kontrola: nowa karta ma ten sam układ co wzór `wzor/sophia-gleam-50-40-karta-katalogowa-TEST.pdf` i przykład `przyklady/olivia/`.
+- Pole `montaz_osoby` (np. „2 osoby”) wpisujemy tylko, gdy jest potwierdzone.

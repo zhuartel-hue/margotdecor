@@ -80,6 +80,7 @@ def build(data, final=False):
     details = "".join(f'<figure><img src="{img(p)}" alt="{e(full)} – {e(c)}"><figcaption>{e(c)}</figcaption></figure>'
                       for p, c in data["zdjecia"]["detale"])
     bulbs = "".join(f"<li><span>{e(n)}</span><span class=\"dots\"></span><span>{e(c)}</span></li>" for n, c in data["zarowki"])
+    montaz = f"Do montażu potrzebne są {e(data['montaz_osoby'])}. " if data.get("montaz_osoby") else ""
     test_badge = '<span class="test">Wersja testowa</span>' if data.get("wersja") == "TEST" else ""
 
     head = f"""
@@ -220,7 +221,7 @@ td {{ font-weight: 400; font-variant-numeric: tabular-nums; }}
       <div>
         <h3>Zamówienie i montaż</h3>
         <p>Każda lampa jest wykonywana na zamówienie. Realizacja trwa 1–3 miesiące, płatność 100% z góry.</p>
-        <p>Do montażu potrzebne są 2 osoby. Podłączenie powinien wykonać elektryk z uprawnieniami.</p>
+        <p>{montaz}Podłączenie powinien wykonać elektryk z uprawnieniami.</p>
       </div>
       <div>
         <h3>Pasujące żarówki (sprzedawane osobno)</h3>

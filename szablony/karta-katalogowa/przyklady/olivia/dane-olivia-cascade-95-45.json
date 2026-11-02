@@ -1,0 +1,124 @@
+{
+  "nazwa": "Olivia Cascade",
+  "wymiar": "95-45",
+  "kolekcja": "Olivia",
+  "typ": "Żyrandol kryształowy",
+  "intro": "Złoty żyrandol z dwupoziomową kaskadą kryształów o skośnym szlifie.",
+  "o_modelu": [
+    "Olivia Cascade to dwupoziomowy złoty żyrandol, w którym długie kryształy ze skośnym, kratkowym szlifem układają się w gęstą kaskadę. Górną obręcz wieńczy rząd złotych łuków, a w dolnym pierścieniu kryształy przeplatają się z kwadratowymi koralikami, dzięki czemu światło rozbija się na setki refleksów.",
+    "Lampa wisi na złotym łańcuchu z rozetą, a obręcz podtrzymują linki w białym oplocie. Model sprawdzi się nad stołem w jadalni lub w przestronnym salonie.",
+    "Lampy nie należy montować na wilgotnym suficie. Przed czyszczeniem wyłącz zasilanie. Kryształy myj łagodnym, niekorozyjnym środkiem i chroń oprawę przed kwasami oraz rozpuszczalnikami."
+  ],
+  "cena": "4 999 zł",
+  "url": "https://margotdecor.com/products/olivia-cascade-95-45",
+  "url_krotki": "margotdecor.com",
+  "kluczowe": [
+    [
+      "Średnica",
+      "95 cm"
+    ],
+    [
+      "Wysokość",
+      "45 cm"
+    ],
+    [
+      "Liczba żarówek",
+      "16"
+    ],
+    [
+      "Gwint żarówki",
+      "E14"
+    ]
+  ],
+  "zdjecia": {
+    "glowne": "przyklady/olivia/img/olivia-cascade-95-45-01-aranzacja-2048.jpg",
+    "glowne_podpis": "Olivia Cascade 95-45 w jasnym salonie",
+    "detale": [
+      [
+        "przyklady/olivia/img/olivia-cascade-95-45-03-detal-lukow-2048.jpg",
+        "Złote łuki i kryształy o skośnym szlifie"
+      ],
+      [
+        "przyklady/olivia/img/olivia-cascade-95-45-04-gora-bok-2048.jpg",
+        "Górna obręcz i linki w białym oplocie"
+      ]
+    ]
+  },
+  "dane": [
+    [
+      "Wymiary i masa",
+      [
+        [
+          "Średnica",
+          "95 cm"
+        ],
+        [
+          "Wysokość bez łańcucha",
+          "45 cm"
+        ],
+        [
+          "Maksymalny zwis",
+          null
+        ],
+        [
+          "Masa stelaża",
+          null
+        ]
+      ]
+    ],
+    [
+      "Światło i zasilanie",
+      [
+        [
+          "Liczba żarówek",
+          "16"
+        ],
+        [
+          "Źródło światła",
+          "Żarówki LED lub tradycyjne (brak w zestawie)"
+        ],
+        [
+          "Gwint żarówki",
+          "E14"
+        ],
+        [
+          "Napięcie zasilania",
+          "220 V, 50 Hz"
+        ],
+        [
+          "Zawieszenie",
+          "Złoty łańcuch z rozetą"
+        ]
+      ]
+    ],
+    [
+      "Kryształy",
+      [
+        [
+          "Kryształy ze skośnym szlifem",
+          "166 szt. 30 × 120 mm"
+        ],
+        [
+          "Kryształy z koralikiem",
+          "66 szt. 30 × 120 mm"
+        ],
+        [
+          "Kwadratowe koraliki",
+          "298 szt."
+        ]
+      ]
+    ]
+  ],
+  "zarowki": [
+    [
+      "Żarówka LED E14 – 3 barwy światła",
+      "30 zł"
+    ],
+    [
+      "Złota żarówka LED E14 10 W",
+      "16 zł"
+    ]
+  ],
+  "data_karty": "02.11.2026",
+  "wersja": "TEST"
+}
