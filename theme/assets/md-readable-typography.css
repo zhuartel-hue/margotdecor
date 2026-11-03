@@ -1,0 +1,183 @@
+/* Margot Decor — readability pass v1, 03.10.2026
+   Goal: improve legibility without changing the premium visual hierarchy. */
+/* 31.10.2026: html stays at the theme base (62.5% = 10px rem). The old 17px/16px base
+   blew every theme size (menu, drawer, titles, price, buttons) up ~1.7x.
+   Body copy is kept readable with fixed px sizes below instead. */
+
+body {
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#MainContent p,
+#MainContent li,
+#MainContent dt,
+#MainContent dd,
+#MainContent summary,
+#MainContent label,
+#MainContent input,
+#MainContent textarea,
+#MainContent select {
+  line-height: 1.65;
+}
+
+.rte,
+.rte p,
+.rte li {
+  font-size: 17px;
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+@media (max-width: 749px) {
+  .rte,
+  .rte p,
+  .rte li {
+    font-size: 16px;
+  }
+}
+
+/* Margot Decor — smaller product-card action on mobile */
+@media (max-width: 768px) {
+  .product-card--button-position-mobile-on-image.product-card--button-type-mobile-icon .product-card__inner .product-card__btn.btn {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    max-width: 52px !important;
+    max-height: 52px !important;
+    padding: 0 !important;
+  }
+
+  .product-card--button-position-mobile-on-image.product-card--button-type-mobile-icon .product-card__inner .product-card__btn-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-card--button-position-mobile-on-image.product-card--button-type-mobile-icon .product-card__inner .product-card__btn-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+/* Margot Decor — collection page: smaller Filtruj/Sortuj + banner description, 30.10.2026 (option B) */
+.shop__filters-btn,
+.sort-list__btn {
+  font-size: 17px;
+}
+
+.shop__filters-btn .icon-filter,
+.sort-list__btn-icon {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 749px) {
+  .shop__filters-btn,
+  .sort-list__btn {
+    font-size: 16px;
+  }
+
+  .shop__filters-btn .icon-filter,
+  .sort-list__btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .collection-hero__description,
+  .collection-hero__description p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+/* Margot Decor — 31.10.2026: header menu and product title back to theme scale
+   (html 17px makes theme rem sizes ~1.7x; this keeps body text readable but shrinks menu + titles) */
+@media (min-width: 750px) {
+  .header__item,
+  .header__item .underline-text__label {
+    font-size: 15px;
+    letter-spacing: .02em;
+  }
+
+  .header__menu-item,
+  .header__menu-item-label {
+    font-size: 15px;
+  }
+
+  .header__dropdown-toggle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header__item {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1439px) {
+  .header__item,
+  .header__item .underline-text__label {
+    font-size: 14px;
+  }
+
+  .header__item {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+.product-general-info-block h1 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+@media (max-width: 749px) {
+  .product-general-info-block h1 {
+    font-size: 26px;
+  }
+}
+
+/* Margot Decor — 31.10.2026 (2): product price and mobile drawer menu at a calm size */
+.product-price__current-price {
+  font-size: 22px;
+}
+
+.drawer-menu__menu-item,
+.drawer-menu__menu-item-label,
+.drawer-menu__list-title-label {
+  font-size: 20px;
+}
+
+.drawer-menu__menu-item--medium,
+.drawer-menu__menu-item--medium .drawer-menu__menu-item-label,
+.drawer-menu__menu-item--small,
+.drawer-menu__menu-item--small .drawer-menu__menu-item-label {
+  font-size: 17px;
+}
+
+@media (max-width: 749px) {
+  .product-price__current-price {
+    font-size: 20px;
+  }
+}
+
+/* Margot Decor — 31.10.2026: homepage banner "Pasja, precyzja…" same width as the collage tiles below
+   (page width + the theme's side padding, like the collage section) */
+[id$="__image_banner_fUc3Bc"] {
+  padding-inline: var(--gsc-aside-padding-size, 0);
+}
+
+[id$="__image_banner_fUc3Bc"] .container {
+  max-width: var(--gsc-page-width);
+}
