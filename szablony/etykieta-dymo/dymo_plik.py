@@ -5,7 +5,7 @@ Uwaga: LabelName odgadnięty ze wzorca DYMO ("<nr> <nazwa>"); jeśli DYMO odrzuc
 zapisz pustą etykietę 2166659 w DYMO Connect i podmień LabelName/DYMORect na wartości z niej."""
 import base64, sys, pathlib
 
-LABEL_NAME = "2166659 LW 102x210 mm"
+LABEL_NAME = "2166659 DHL Labels"   # PaperName z bazy DYMO Connect (Papers/SKUs.xml)
 W_IN, H_IN = 210 / 25.4, 102 / 25.4   # poziomo, w calach
 M = 0.04                              # margines bezpieczeństwa (cale)
 
