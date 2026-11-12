@@ -1,0 +1,1 @@
+{"permissions":{"allow":["mcp__Shopify__graphql_mutation","mcp__Shopify__upload_file","Bash(curl * https://shopify-staged-uploads.storage.googleapis.com/*)"]}}
