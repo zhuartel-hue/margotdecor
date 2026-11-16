@@ -56,8 +56,12 @@
           "45 cm"
         ],
         [
+          "Łańcuch w zestawie",
+          "57 cm"
+        ],
+        [
           "Maksymalny zwis",
-          null
+          "Bez stałego limitu"
         ],
         [
           "Masa stelaża",
@@ -138,7 +142,8 @@
       "16 zł"
     ]
   ],
-  "data_karty": "02.11.2026",
+  "data_karty": "16.11.2026",
   "wersja": "TEST",
-  "montaz_osoby": "2 osoby"
+  "montaz_osoby": "2 osoby",
+  "lancuch_cm": "57"
 }

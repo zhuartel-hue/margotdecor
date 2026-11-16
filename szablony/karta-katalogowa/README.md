@@ -37,3 +37,4 @@ Format: PDF A4, 2 strony, do druku i wysyłki klientom. Tylko język polski.
 - Zmiana wyglądu tylko na wyraźną prośbę Arkadiusza, jako nowa wersja v2 (v1 zostaje bez zmian).
 - Kontrola: nowa karta ma ten sam układ co wzór `wzor/sophia-gleam-50-40-karta-katalogowa-TEST.pdf` i przykład `przyklady/olivia/`.
 - Pole `montaz_osoby` (np. „2 osoby”) wpisujemy tylko, gdy jest potwierdzone.
+- **v1.1 (16.11.2026, na prośbę Arkadiusza):** pole `lancuch_cm` (łańcuch w zestawie 57 cm). W ramce „Zamówienie i montaż” zdanie o dłuższym łańcuchu na zamówienie specjalne (mail na info@margotdecor.com). Grupy danych technicznych dzielone na 2 kolumny tak, żeby strona 2 zawsze się mieściła. Wygląd bez zmian.
