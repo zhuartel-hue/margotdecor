@@ -70,6 +70,9 @@ def build(data, final=False):
                 val_html = e(val)
             trs.append(f"<tr><th scope=\"row\">{e(label)}</th><td>{val_html}</td></tr>")
         groups.append(f'<div class="spec-group"><h3>{e(gname)}</h3><table>{"".join(trs)}</table></div>')
+    # podział grup na 2 kolumny tak, by dłuższa kolumna była jak najkrótsza (kolejność grup bez zmian)
+    sizes = [len(r) + 1.5 for _, r in data["dane"]]
+    split = min(range(1, len(sizes)), key=lambda k: max(sum(sizes[:k]), sum(sizes[k:]))) if len(sizes) > 1 else 1
     if final and missing:
         sys.exit("BRAKI w danych (karta FINAL wstrzymana): " + ", ".join(missing))
 
@@ -80,6 +83,8 @@ def build(data, final=False):
     details = "".join(f'<figure><img src="{img(p)}" alt="{e(full)} – {e(c)}"><figcaption>{e(c)}</figcaption></figure>'
                       for p, c in data["zdjecia"]["detale"])
     bulbs = "".join(f"<li><span>{e(n)}</span><span class=\"dots\"></span><span>{e(c)}</span></li>" for n, c in data["zarowki"])
+    lancuch = (f'<p>Łańcuch w zestawie ma {e(data["lancuch_cm"])} cm. Dłuższy łańcuch wykonujemy na zamówienie specjalne: napisz na info@margotdecor.com.</p>'
+               if data.get("lancuch_cm") else "")
     montaz = f"Do montażu potrzebne są {e(data['montaz_osoby'])}. " if data.get("montaz_osoby") else ""
     test_badge = '<span class="test">Wersja testowa</span>' if data.get("wersja") == "TEST" else ""
 
@@ -117,7 +122,7 @@ html, body {{ background: var(--desk); color: var(--ink); }}
 body {{ margin: 0; font-family: var(--body); font-weight: 300; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
 .stack {{ display: grid; justify-items: center; gap: 24px; padding-block: 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }}
 .fit {{ width: 100%; max-width: 210mm; aspect-ratio: 210 / 297; position: relative; overflow: hidden; box-shadow: 0 1px 2px rgba(40,30,10,.12), 0 8px 28px rgba(40,30,10,.12); background: var(--paper); }}
-.page {{ width: 210mm; height: 297mm; padding: 13mm 14mm 11mm; background: var(--paper); position: absolute; top: 0; left: 0; transform-origin: 0 0; transform: scale(var(--s, 1)); display: flex; flex-direction: column; gap: 6mm; overflow: hidden; }}
+.page {{ width: 210mm; height: 297mm; padding: 13mm 14mm 11mm; background: var(--paper); position: absolute; top: 0; left: 0; transform-origin: 0 0; transform: scale(var(--s, 1)); display: flex; flex-direction: column; gap: 4.5mm; overflow: hidden; }}
 @media print {{
   html, body {{ background: var(--paper); }}
   .stack {{ display: block; padding: 0; }}
@@ -159,7 +164,7 @@ h1 .dim {{ color: var(--gold); font-style: italic; font-size: 30pt; margin-left:
 h2 {{ font-family: var(--display); font-weight: 400; font-size: 20pt; margin: 0 0 3mm; display: flex; align-items: baseline; gap: 3mm; }}
 h2::after {{ content: ""; flex: 1; border-bottom: 0.3mm solid var(--line); transform: translateY(-1.5mm); }}
 .about {{ display: grid; grid-template-columns: 1fr 86mm; gap: 8mm; }}
-.about-text p {{ font-size: 9.5pt; line-height: 1.65; margin: 0 0 3mm; max-width: 95mm; }}
+.about-text p {{ font-size: 9.2pt; line-height: 1.6; margin: 0 0 2.5mm; max-width: 95mm; }}
 .details {{ display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }}
 .details figure {{ margin: 0; }}
 .details img {{ width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }}
@@ -168,7 +173,7 @@ h2::after {{ content: ""; flex: 1; border-bottom: 0.3mm solid var(--line); trans
 .spec-col {{ display: flex; flex-direction: column; gap: 4mm; }}
 .spec-group h3 {{ font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin: 0 0 1mm; }}
 table {{ width: 100%; border-collapse: collapse; font-size: 8.8pt; }}
-th, td {{ text-align: left; padding: 1.55mm 0; border-bottom: 0.25mm solid var(--line); vertical-align: top; }}
+th, td {{ text-align: left; padding: 1.2mm 0; border-bottom: 0.25mm solid var(--line); vertical-align: top; }}
 th {{ font-weight: 300; color: var(--stone); width: 55%; padding-right: 3mm; }}
 td {{ font-weight: 400; font-variant-numeric: tabular-nums; }}
 .brak {{ color: var(--amber); font-weight: 500; font-size: 7.5pt; letter-spacing: .06em; text-transform: uppercase; }}
@@ -213,8 +218,8 @@ td {{ font-weight: 400; font-variant-numeric: tabular-nums; }}
     <div>
       <h2>Dane techniczne</h2>
       <div class="specs">
-        <div class="spec-col">{groups[0]}{groups[1] if len(groups) > 1 else ""}</div>
-        <div class="spec-col">{"".join(groups[2:])}</div>
+        <div class="spec-col">{"".join(groups[:split])}</div>
+        <div class="spec-col">{"".join(groups[split:])}</div>
       </div>
     </div>
     <div class="info">
@@ -222,6 +227,7 @@ td {{ font-weight: 400; font-variant-numeric: tabular-nums; }}
         <h3>Zamówienie i montaż</h3>
         <p>Każda lampa jest wykonywana na zamówienie. Realizacja trwa 1–3 miesiące, płatność 100% z góry.</p>
         <p>{montaz}Podłączenie powinien wykonać elektryk z uprawnieniami.</p>
+        {lancuch}
       </div>
       <div>
         <h3>Pasujące żarówki (sprzedawane osobno)</h3>

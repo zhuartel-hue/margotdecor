@@ -5,7 +5,7 @@
   "typ": "Żyrandol kryształowy",
   "intro": "Złoty żyrandol z dwupoziomową kaskadą kryształów o skośnym szlifie.",
   "o_modelu": [
-    "Olivia Cascade to dwupoziomowy złoty żyrandol, w którym długie kryształy ze skośnym, kratkowym szlifem układają się w gęstą kaskadę. Górną obręcz wieńczy rząd złotych łuków, a w dolnym pierścieniu kryształy przeplatają się ze złotymi rurkami w białym oplocie, dzięki czemu światło rozbija się na setki refleksów.",
+    "Olivia Cascade to dwupoziomowy złoty żyrandol, w którym długie kryształy ze skośnym, kratkowym szlifem układają się w gęstą kaskadę. Górną obręcz wieńczy rząd złotych łuków, a w dolnym pierścieniu kryształy przeplatają się z kwadratowymi kryształami i złotymi rurkami w białym oplocie, dzięki czemu światło rozbija się na setki refleksów.",
     "Lampa wisi na złotym łańcuchu z rozetą, a obręcz podtrzymują linki w białym oplocie. Model sprawdzi się nad stołem w jadalni lub w przestronnym salonie.",
     "Lampy nie należy montować na wilgotnym suficie. Przed czyszczeniem wyłącz zasilanie. Kryształy myj łagodnym, niekorozyjnym środkiem i chroń oprawę przed kwasami oraz rozpuszczalnikami."
   ],
@@ -57,8 +57,12 @@
           "45 cm"
         ],
         [
+          "Łańcuch w zestawie",
+          "57 cm"
+        ],
+        [
           "Maksymalny zwis",
-          null
+          "Bez stałego limitu"
         ],
         [
           "Masa stelaża",
@@ -83,7 +87,7 @@
         ],
         [
           "Napięcie zasilania",
-          "220 V, 50 Hz"
+          "230 V"
         ],
         [
           "Zawieszenie",
@@ -96,11 +100,11 @@
       [
         [
           "Kryształy ze skośnym szlifem",
-          "166 szt. 30 × 120 mm"
+          "232 szt. 30 × 120 mm"
         ],
         [
-          "Kryształy z kwadratowym elementem",
-          "66 szt. 30 × 120 mm"
+          "Kryształy kwadratowe",
+          "66 szt. 30 × 30 mm"
         ],
         [
           "Rurki z białym oplotem",
@@ -119,6 +123,7 @@
       "16 zł"
     ]
   ],
-  "data_karty": "02.11.2026",
-  "wersja": "TEST"
+  "data_karty": "16.11.2026",
+  "wersja": "TEST",
+  "lancuch_cm": "57"
 }
